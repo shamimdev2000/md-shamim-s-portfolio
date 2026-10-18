@@ -33,7 +33,7 @@ export const RESUME_DATA = {
   github: 'https://github.com/shamimdev2000',
   portfolio: 'https://portfolio-eta-ten-3fke5p2t79.vercel.app/',
   linkedin: 'https://www.linkedin.com/in/md-shamim-46a495319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-  summary: 'Full-Stack MERN Developer with hands-on experience in JavaScript and React-based web application development, alongside ongoing MERN Stack Development training. Skilled in building responsive frontend interfaces, reusable UI components, and interactive web experiences using React.js, JavaScript, and Tailwind CSS. Familiar with modern web application workflows and committed to developing end-to-end applications by strengthening backend capabilities with Node.js, Express.js, REST APIs, and MongoDB. Focused on maintainable code, usability, and continuous improvement.',
+  summary: 'Full-Stack MERN Developer skilled in JavaScript, React.js, and Tailwind CSS, with experience building responsive UIs and reusable components. Developing expertise in Node.js, Express.js, REST APIs, and MongoDB to build scalable, end-to-end web applications.',
   certification: {
     title: 'National Skills Certificate – Web Design and Development for Freelancing, Level-3',
     authority: 'National Skills Development Authority (NSDA), Government of Bangladesh.',
