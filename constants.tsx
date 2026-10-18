@@ -133,15 +133,9 @@ export const TECHNICAL_SKILLS_CATEGORIES: TechnicalSkillCategory[] = [
     iconType: 'server'
   },
   {
-    title: 'Version Control',
-    titleBn: 'ভার্সন কন্ট্রোল',
-    skills: ['Git', 'GitHub'],
-    iconType: 'git'
-  },
-  {
     title: 'Tools & Deployment',
     titleBn: 'টুলস ও ডিপ্লয়মেন্ট',
-    skills: ['Visual Studio Code', 'Postman', 'Figma', 'Vercel', 'Netlify', 'Render', 'Railway'],
+    skills: ['Git', 'GitHub', 'Visual Studio Code', 'Postman', 'Figma', 'Vercel', 'Netlify', 'Render', 'Railway'],
     iconType: 'tool'
   }
 ];

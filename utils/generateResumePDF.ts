@@ -175,8 +175,7 @@ export function generateAndDownloadResume() {
   const skillCategories = [
     { label: 'Frontend:', items: 'JavaScript (ES6), HTML5 & CSS3, React.js, Next.js, Tailwind CSS, Bootstrap, TanStack Query, Component-Based UI' },
     { label: 'Backend & DB:', items: 'Node.js, Express.js, MongoDB, MySQL, Supabase, REST API concepts' },
-    { label: 'Version Control:', items: 'Git, GitHub' },
-    { label: 'Tools & Deploy:', items: 'Visual Studio Code, Postman, Figma, Vercel, Netlify, Render, Railway' }
+    { label: 'Tools & Deploy:', items: 'Git, GitHub, Visual Studio Code, Postman, Figma, Vercel, Netlify, Render, Railway' }
   ];
 
   skillCategories.forEach((sc) => {
