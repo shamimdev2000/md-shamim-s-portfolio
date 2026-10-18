@@ -1,0 +1,8 @@
+{
+  "name": "MD SHAMIM Portfolio",
+  "description": "Personal portfolio website for MD SHAMIM, Full Stack MERN Developer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
