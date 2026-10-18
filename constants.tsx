@@ -33,7 +33,7 @@ export const RESUME_DATA = {
   github: 'https://github.com/shamimdev2000',
   portfolio: 'https://portfolio-eta-ten-3fke5p2t79.vercel.app/',
   linkedin: 'https://www.linkedin.com/in/md-shamim-46a495319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-  summary: 'Frontend Developer With 1 Years Of Hands On Experience In JavaScript, React.Js Next.Js, And Responsive Web Design. Skilled In Building Clean, User-Friendly Interfaces And Transforming Figma Designs Into Fully Functional Web Design. Strong Analytical, Design, And Problem Solving Abilities With A Track Record Of Delivering Projects In Collaborative Team Environments. Passionate About Continuous Learning And Improving JavaScript Expertise While Contributing To Impactful Products.',
+  summary: 'Full-Stack MERN Developer with hands-on experience in JavaScript and React-based web application development, alongside ongoing MERN Stack Development training. Skilled in building responsive frontend interfaces, reusable UI components, and interactive web experiences using React.js, JavaScript, and Tailwind CSS. Familiar with modern web application workflows and committed to developing end-to-end applications by strengthening backend capabilities with Node.js, Express.js, REST APIs, and MongoDB. Focused on maintainable code, usability, and continuous improvement.',
   certification: {
     title: 'National Skills Certificate – Web Design and Development for Freelancing, Level-3',
     authority: 'National Skills Development Authority (NSDA), Government of Bangladesh.',
@@ -59,6 +59,21 @@ export const RESUME_DATA = {
 };
 
 export const PROJECTS: Project[] = [
+  {
+    id: 'bakery-erp',
+    title: 'Bakery Management ERP System',
+    description: 'Developed a full-stack bakery management ERP system using the MERN stack, integrating frontend and backend functionality to streamline inventory management, order processing, sales tracking, user authentication, and reporting.',
+    image: '{projectBakery}',
+    tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'MERN Stack'],
+    link: 'https://sweet-treats-supabase-mdshamim-en.vercel.app/',
+    github: 'https://sweet-treats-supabase-mdshamim-en.vercel.app/',
+    highlights: [
+      'Bakery businesses need an efficient solution to manage inventory, process orders, track sales, and monitor daily operations.',
+      'Developed a full-stack bakery management ERP system using the MERN stack, integrating frontend and backend functionality.',
+      'Implemented inventory management, order processing, sales tracking, user authentication, and reporting features.',
+      'Built a centralized management system to organize business data and streamline bakery operations.'
+    ]
+  },
   {
     id: '1',
     title: 'Creative IT Graphics Design Landing Page',
@@ -93,14 +108,80 @@ export const PROJECTS: Project[] = [
   },
 ];
 
+export interface TechnicalSkillCategory {
+  title: string;
+  titleBn: string;
+  badge?: string;
+  badgeBn?: string;
+  skills: string[];
+  iconType: 'code' | 'layout' | 'server' | 'database' | 'fetch' | 'git' | 'tool' | 'design';
+}
+
+export const TECHNICAL_SKILLS_CATEGORIES: TechnicalSkillCategory[] = [
+  {
+    title: 'Programming Languages',
+    titleBn: 'প্রোগ্রামিং ল্যাঙ্গুয়েজ',
+    skills: ['JavaScript (ES6)', 'HTML5', 'CSS3'],
+    iconType: 'code'
+  },
+  {
+    title: 'Frontend Development',
+    titleBn: 'ফ্রন্টএন্ড ডেভেলপমেন্ট',
+    skills: ['React.js', 'Next.js', 'Tailwind CSS', 'Bootstrap', 'Responsive Web Design', 'Component-Based UI'],
+    iconType: 'layout'
+  },
+  {
+    title: 'Backend',
+    titleBn: 'ব্যাকএন্ড',
+    badge: 'MERN learning focus',
+    badgeBn: 'MERN শিক্ষণীয় ফোকাস',
+    skills: ['Node.js', 'Express.js', 'REST API concepts'],
+    iconType: 'server'
+  },
+  {
+    title: 'Database',
+    titleBn: 'ডাটাবেজ',
+    badge: 'MERN learning focus',
+    badgeBn: 'MERN শিক্ষণীয় ফোকাস',
+    skills: ['MongoDB'],
+    iconType: 'database'
+  },
+  {
+    title: 'Data Fetching',
+    titleBn: 'ডাটা ফেচিং',
+    skills: ['TanStack Query'],
+    iconType: 'fetch'
+  },
+  {
+    title: 'Version Control',
+    titleBn: 'ভার্সন কন্ট্রোল',
+    skills: ['Git', 'GitHub'],
+    iconType: 'git'
+  },
+  {
+    title: 'Tools & Deployment',
+    titleBn: 'টুলস ও ডিপ্লয়মেন্ট',
+    skills: ['Visual Studio Code', 'Postman', 'Vercel', 'Netlify', 'Render', 'Railway'],
+    iconType: 'tool'
+  },
+  {
+    title: 'Design Implementation',
+    titleBn: 'ডিজাইন ইমপ্লিমেন্টেশন',
+    skills: ['Figma-to-Code', 'UI Development', 'Responsive Layouts'],
+    iconType: 'design'
+  }
+];
+
 export const SKILLS: Skill[] = [
-  { name: 'React.Js', level: 92, category: 'Frontend' },
-  { name: 'Node.Js', level: 85, category: 'Backend' },
-  { name: 'Express.Js', level: 85, category: 'Backend' },
-  { name: 'MongoDB', level: 82, category: 'Backend' },
-  { name: 'Next.Js', level: 85, category: 'Frontend' },
-  { name: 'JavaScript', level: 90, category: 'Frontend' },
+  { name: 'React.js', level: 92, category: 'Frontend' },
+  { name: 'JavaScript (ES6)', level: 90, category: 'Frontend' },
   { name: 'Tailwind CSS', level: 95, category: 'Frontend' },
+  { name: 'Next.js', level: 85, category: 'Frontend' },
+  { name: 'Node.js', level: 82, category: 'Backend' },
+  { name: 'Express.js', level: 82, category: 'Backend' },
+  { name: 'MongoDB', level: 80, category: 'Backend' },
+  { name: 'HTML5 & CSS3', level: 95, category: 'Frontend' },
+  { name: 'TanStack Query', level: 85, category: 'Frontend' },
   { name: 'Git & GitHub', level: 90, category: 'Tools' },
 ];
 

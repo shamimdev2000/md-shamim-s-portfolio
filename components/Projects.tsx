@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { PROJECTS } from '../constants';
 import { ExternalLink, Github, CheckCircle2 } from 'lucide-react';
+import projectBakery from './Assets/bakery_erp_system.jpg';
 import projectCreativeIT from './Assets/creative_it_landing.jpg';
 import project1 from './Assets/project1.png';
 import project2 from './Assets/project2.png';
@@ -10,6 +11,7 @@ import project3 from './Assets/project3.png';
 import { useLanguage } from '../context/LanguageContext';
 
 const projectImages: Record<string, string> = {
+  'bakery-erp': projectBakery,
   '1': projectCreativeIT,
   '2': project1,
   '3': project2,
@@ -39,7 +41,7 @@ const Projects: React.FC = () => {
           </a>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {PROJECTS.map((project, idx) => (
             <motion.div 
               key={project.id}

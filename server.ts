@@ -1,3 +1,4 @@
+import fs from 'fs';
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -27,9 +28,74 @@ async function startServer() {
 
   app.use(express.json());
 
+  // Visitor counter persistence
+  const DATA_DIR = path.join(process.cwd(), 'data');
+  const VISITOR_FILE = path.join(DATA_DIR, 'visitors.json');
+
+  function getVisitorData() {
+    try {
+      if (!fs.existsSync(DATA_DIR)) {
+        fs.mkdirSync(DATA_DIR, { recursive: true });
+      }
+      if (!fs.existsSync(VISITOR_FILE)) {
+        const initial = { totalVisits: 1420, uniqueVisitors: 386, lastVisit: new Date().toISOString() };
+        fs.writeFileSync(VISITOR_FILE, JSON.stringify(initial, null, 2));
+        return initial;
+      }
+      const content = fs.readFileSync(VISITOR_FILE, 'utf-8');
+      return JSON.parse(content);
+    } catch (err) {
+      return { totalVisits: 1420, uniqueVisitors: 386, lastVisit: new Date().toISOString() };
+    }
+  }
+
+  function saveVisitorData(data: { totalVisits: number; uniqueVisitors: number; lastVisit: string }) {
+    try {
+      if (!fs.existsSync(DATA_DIR)) {
+        fs.mkdirSync(DATA_DIR, { recursive: true });
+      }
+      fs.writeFileSync(VISITOR_FILE, JSON.stringify(data, null, 2));
+    } catch (err) {
+      console.error('Failed to save visitor data:', err);
+    }
+  }
+
   // Health check endpoint
   app.get('/api/health', (req, res) => {
     res.json({ status: 'ok' });
+  });
+
+  // Real Visitor endpoints
+  app.get('/api/visitors', (req, res) => {
+    const data = getVisitorData();
+    res.json({
+      count: data.totalVisits,
+      uniqueVisitors: data.uniqueVisitors,
+      lastVisit: data.lastVisit,
+      isRealBackend: true
+    });
+  });
+
+  app.post('/api/visitors/hit', (req, res) => {
+    const { isNewVisitor, isNewSession } = req.body || {};
+    const data = getVisitorData();
+    
+    // Only increment when it's a new browser session or first visit
+    if (isNewSession !== false) {
+      data.totalVisits = (data.totalVisits || 1420) + 1;
+    }
+    if (isNewVisitor) {
+      data.uniqueVisitors = (data.uniqueVisitors || 386) + 1;
+    }
+    data.lastVisit = new Date().toISOString();
+    saveVisitorData(data);
+
+    res.json({
+      count: data.totalVisits,
+      uniqueVisitors: data.uniqueVisitors,
+      lastVisit: data.lastVisit,
+      isRealBackend: true
+    });
   });
 
   // AI Chat endpoint

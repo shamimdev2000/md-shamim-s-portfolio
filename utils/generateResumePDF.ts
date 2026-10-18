@@ -173,24 +173,34 @@ export function generateAndDownloadResume() {
   // -------------------------------------------------------------
   addSectionTitle('Technical Skills');
   const skillCategories = [
-    { label: 'Frontend:', items: 'Bootstrap, Tailwind CSS, React.Js, Next.Js, TanStack Query, JavaScript.' },
+    { label: 'Programming:', items: 'JavaScript (ES6), HTML5, CSS3' },
+    { label: 'Frontend:', items: 'React.js, Next.js, Tailwind CSS, Bootstrap, Responsive Web Design, Component-Based UI' },
+    { label: 'Backend (MERN):', items: 'Node.js, Express.js, REST API concepts (learning focus)' },
+    { label: 'Database (MERN):', items: 'MongoDB (learning focus)' },
+    { label: 'Data Fetching:', items: 'TanStack Query' },
     { label: 'Version Control:', items: 'Git, GitHub' },
-    { label: 'Developer Tools:', items: 'VS Code, Vercel, Netlify' }
+    { label: 'Tools & Deploy:', items: 'Visual Studio Code, Postman, Vercel, Netlify, Render, Railway' },
+    { label: 'Design Implement:', items: 'Figma-to-Code, UI Development, Responsive Layouts' }
   ];
 
   skillCategories.forEach((sc) => {
-    checkPageBreak(6);
+    const labelWidth = 32;
+    const valueWidth = contentWidth - labelWidth;
+    const splitItems = doc.splitTextToSize(sc.items, valueWidth);
+    const rowHeight = Math.max(splitItems.length * 3.4, 4);
+    checkPageBreak(rowHeight + 1);
+
     doc.setFont('helvetica', 'bold');
-    doc.setFontSize(8);
+    doc.setFontSize(7.8);
     doc.setTextColor(15, 23, 42);
     doc.text(sc.label, margin, y);
 
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(51, 65, 85);
-    doc.text(sc.items, margin + 30, y);
-    y += 3.8;
+    doc.text(splitItems, margin + labelWidth, y);
+    y += rowHeight + 0.8;
   });
-  y += 1.5;
+  y += 1;
 
   // -------------------------------------------------------------
   // 6. Projects
