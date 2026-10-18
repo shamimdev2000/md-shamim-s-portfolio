@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Users, Activity, CheckCircle2, Info, X, Globe, BarChart2 } from 'lucide-react';
+import { Users, Info, X, BarChart2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface VisitorStats {
@@ -134,7 +134,7 @@ export const VisitorCounter: React.FC = () => {
         type="button"
         id="visitor-counter-badge"
         onClick={() => setShowDetails(!showDetails)}
-        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 shadow-sm transition-all duration-300 hover:border-indigo-500/50 hover:bg-slate-200/50 dark:hover:bg-slate-800/80 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+        className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 shadow-sm transition-all duration-300 hover:border-indigo-500/50 hover:bg-slate-200/50 dark:hover:bg-slate-800/80 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
         title={language === 'bn' ? 'ভিজিটর অ্যানালিটিক্স দেখতে ক্লিক করুন' : 'Click to view visitor insights'}
         aria-label="Visitor Counter"
       >
@@ -161,10 +161,10 @@ export const VisitorCounter: React.FC = () => {
         <Info className="w-3 h-3 text-slate-400 dark:text-slate-500 ml-0.5 opacity-60 group-hover:opacity-100 transition-opacity" />
       </button>
 
-      {/* Popover Card explaining the Visitor System */}
+      {/* Popover Card explaining the Visitor System (Responsive Placement) */}
       {showDetails && (
-        <div className="absolute bottom-full right-0 mb-3 w-72 sm:w-80 p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 z-50 animate-in fade-in zoom-in-95 duration-200">
-          <div className="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-100 dark:border-slate-800">
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 sm:left-auto sm:right-0 sm:translate-x-0 mb-3 w-[calc(100vw-32px)] max-w-[320px] sm:max-w-xs sm:w-80 p-3.5 sm:p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 z-50 animate-in fade-in zoom-in-95 duration-200">
+          <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100 dark:border-slate-800">
             <div className="flex items-center gap-2">
               <span className="p-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400">
                 <BarChart2 className="w-4 h-4" />
@@ -183,28 +183,28 @@ export const VisitorCounter: React.FC = () => {
             </div>
             <button
               onClick={() => setShowDetails(false)}
-              className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-md"
+              className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-md cursor-pointer"
               aria-label="Close"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
-          <div className="grid grid-cols-2 gap-2 mb-3">
-            <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
+          <div className="grid grid-cols-2 gap-2 mb-2.5">
+            <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
               <span className="text-[10px] text-slate-500 dark:text-slate-400 block mb-0.5">
                 {language === 'bn' ? 'মোট পেজ ভিউ' : 'Total Visits'}
               </span>
-              <span className="text-base font-mono font-bold text-slate-900 dark:text-white">
+              <span className="text-sm sm:text-base font-mono font-bold text-slate-900 dark:text-white">
                 {formatNumber(currentCount)}
               </span>
             </div>
 
-            <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
+            <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
               <span className="text-[10px] text-slate-500 dark:text-slate-400 block mb-0.5">
                 {language === 'bn' ? 'ইউনিক ভিজিটর' : 'Unique Visitors'}
               </span>
-              <span className="text-base font-mono font-bold text-slate-900 dark:text-white">
+              <span className="text-sm sm:text-base font-mono font-bold text-slate-900 dark:text-white">
                 {formatNumber(uniqueCount)}
               </span>
             </div>
@@ -213,11 +213,11 @@ export const VisitorCounter: React.FC = () => {
           <div className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed bg-slate-50/80 dark:bg-slate-800/40 p-2.5 rounded-xl border border-slate-100 dark:border-slate-800/80">
             {language === 'bn' ? (
               <p>
-                🌐 <strong>এটি কীভাবে কাজ করে:</strong> প্রতিটি নতুন ব্রাউজার সেশন সার্ভারের <code className="text-indigo-600 dark:text-indigo-400">/api/visitors</code>-এ গণনা করা হয়। আপনি ইনকগনিটো উইন্ডো বা অন্য ডিভাইসে সাইট খুললে স্বয়ংক্রিয়ভাবে ভিজিটর সংখ্যা বাড়বে।
+                🌐 <strong>এটি কীভাবে কাজ করে:</strong> প্রতিটি নতুন ব্রাউজার সেশন সার্ভারের <code className="text-indigo-600 dark:text-indigo-400 font-mono">/api/visitors</code>-এ গণনা করা হয়। নতুন ট্যাবে বা অন্য ডিভাইসে সাইট খুললে স্বয়ংক্রিয়ভাবে ভিজিটর সংখ্যা বাড়বে।
               </p>
             ) : (
               <p>
-                🌐 <strong>How it works:</strong> Each new visitor & browser session is recorded via the backend <code className="text-indigo-600 dark:text-indigo-400">/api/visitors</code> endpoint. Opening the site in Incognito or on another device increments the count in real time.
+                🌐 <strong>How it works:</strong> Each new session is recorded via the backend <code className="text-indigo-600 dark:text-indigo-400 font-mono">/api/visitors</code> endpoint. Opening in a new device or tab increments real-time counts.
               </p>
             )}
           </div>

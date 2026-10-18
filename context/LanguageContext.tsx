@@ -22,7 +22,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.greeting': "Hi, I'm",
     'hero.role': 'Full Stack MERN Developer',
     'hero.bio': 'Full Stack MERN Developer with hands-on experience in MongoDB, Express.js, React.js, Node.js, Next.js, and responsive web design. Skilled in building clean, scalable user interfaces and robust full-stack applications.',
-    'hero.viewWork': 'View My Work',
+    'hero.viewWork': 'View Project',
     'hero.downloadResume': 'Download CV',
     'hero.downloading': 'Downloading CV...',
     'hero.downloaded': 'CV Downloaded',

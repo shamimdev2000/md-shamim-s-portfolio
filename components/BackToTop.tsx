@@ -56,13 +56,13 @@ export const BackToTop: React.FC = () => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.6, y: 20 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
-          className="fixed bottom-6 right-6 z-50"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50"
         >
           <button
             id="back-to-top-btn"
             onClick={scrollToTop}
             aria-label={t('common.backToTop')}
-            className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 shadow-lg hover:shadow-indigo-500/20 hover:border-indigo-500/60 dark:hover:border-indigo-500/60 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 active:scale-95 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+            className="group relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 shadow-lg hover:shadow-indigo-500/20 hover:border-indigo-500/60 dark:hover:border-indigo-500/60 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 active:scale-95 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 cursor-pointer"
           >
             {/* Circular Progress Ring */}
             <svg className="absolute w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 44 44">
