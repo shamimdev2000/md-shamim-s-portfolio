@@ -173,14 +173,10 @@ export function generateAndDownloadResume() {
   // -------------------------------------------------------------
   addSectionTitle('Technical Skills');
   const skillCategories = [
-    { label: 'Programming:', items: 'JavaScript (ES6), HTML5, CSS3' },
-    { label: 'Frontend:', items: 'React.js, Next.js, Tailwind CSS, Bootstrap, Responsive Web Design, Component-Based UI' },
-    { label: 'Backend (MERN):', items: 'Node.js, Express.js, REST API concepts (learning focus)' },
-    { label: 'Database (MERN):', items: 'MongoDB (learning focus)' },
-    { label: 'Data Fetching:', items: 'TanStack Query' },
+    { label: 'Frontend:', items: 'JavaScript (ES6), HTML5 & CSS3, React.js, Next.js, Tailwind CSS, Bootstrap, TanStack Query, Component-Based UI' },
+    { label: 'Backend & DB:', items: 'Node.js, Express.js, MongoDB, MySQL, Supabase, REST API concepts' },
     { label: 'Version Control:', items: 'Git, GitHub' },
-    { label: 'Tools & Deploy:', items: 'Visual Studio Code, Postman, Vercel, Netlify, Render, Railway' },
-    { label: 'Design Implement:', items: 'Figma-to-Code, UI Development, Responsive Layouts' }
+    { label: 'Tools & Deploy:', items: 'Visual Studio Code, Postman, Figma, Vercel, Netlify, Render, Railway' }
   ];
 
   skillCategories.forEach((sc) => {

@@ -95,7 +95,7 @@ const Skills: React.FC = () => {
               }`}
             >
               <Layers className="w-4 h-4" />
-              <span>{language === 'bn' ? 'সকল প্রযুক্তিগত ক্যাটাগরি' : 'Skill Categories (8)'}</span>
+              <span>{language === 'bn' ? 'সকল প্রযুক্তিগত ক্যাটাগরি' : `Skill Categories (${TECHNICAL_SKILLS_CATEGORIES.length})`}</span>
             </button>
             <button
               type="button"

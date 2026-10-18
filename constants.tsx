@@ -119,38 +119,18 @@ export interface TechnicalSkillCategory {
 
 export const TECHNICAL_SKILLS_CATEGORIES: TechnicalSkillCategory[] = [
   {
-    title: 'Programming Languages',
-    titleBn: 'প্রোগ্রামিং ল্যাঙ্গুয়েজ',
-    skills: ['JavaScript (ES6)', 'HTML5', 'CSS3'],
-    iconType: 'code'
-  },
-  {
     title: 'Frontend Development',
     titleBn: 'ফ্রন্টএন্ড ডেভেলপমেন্ট',
-    skills: ['React.js', 'Next.js', 'Tailwind CSS', 'Bootstrap', 'Responsive Web Design', 'Component-Based UI'],
+    skills: ['JavaScript (ES6)', 'HTML5 & CSS3', 'React.js', 'Next.js', 'Tailwind CSS', 'Bootstrap', 'TanStack Query', 'Component-Based UI'],
     iconType: 'layout'
   },
   {
-    title: 'Backend',
-    titleBn: 'ব্যাকএন্ড',
+    title: 'Backend & Databases',
+    titleBn: 'ব্যাকএন্ড ও ডাটাবেজ',
     badge: 'MERN learning focus',
     badgeBn: 'MERN শিক্ষণীয় ফোকাস',
-    skills: ['Node.js', 'Express.js', 'REST API concepts'],
+    skills: ['Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Supabase', 'REST API concepts'],
     iconType: 'server'
-  },
-  {
-    title: 'Database',
-    titleBn: 'ডাটাবেজ',
-    badge: 'MERN learning focus',
-    badgeBn: 'MERN শিক্ষণীয় ফোকাস',
-    skills: ['MongoDB'],
-    iconType: 'database'
-  },
-  {
-    title: 'Data Fetching',
-    titleBn: 'ডাটা ফেচিং',
-    skills: ['TanStack Query'],
-    iconType: 'fetch'
   },
   {
     title: 'Version Control',
@@ -161,14 +141,8 @@ export const TECHNICAL_SKILLS_CATEGORIES: TechnicalSkillCategory[] = [
   {
     title: 'Tools & Deployment',
     titleBn: 'টুলস ও ডিপ্লয়মেন্ট',
-    skills: ['Visual Studio Code', 'Postman', 'Vercel', 'Netlify', 'Render', 'Railway'],
+    skills: ['Visual Studio Code', 'Postman', 'Figma', 'Vercel', 'Netlify', 'Render', 'Railway'],
     iconType: 'tool'
-  },
-  {
-    title: 'Design Implementation',
-    titleBn: 'ডিজাইন ইমপ্লিমেন্টেশন',
-    skills: ['Figma-to-Code', 'UI Development', 'Responsive Layouts'],
-    iconType: 'design'
   }
 ];
 
@@ -180,6 +154,8 @@ export const SKILLS: Skill[] = [
   { name: 'Node.js', level: 82, category: 'Backend' },
   { name: 'Express.js', level: 82, category: 'Backend' },
   { name: 'MongoDB', level: 80, category: 'Backend' },
+  { name: 'MySQL', level: 80, category: 'Backend' },
+  { name: 'Supabase', level: 85, category: 'Backend' },
   { name: 'HTML5 & CSS3', level: 95, category: 'Frontend' },
   { name: 'TanStack Query', level: 85, category: 'Frontend' },
   { name: 'Git & GitHub', level: 90, category: 'Tools' },
